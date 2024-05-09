@@ -4,7 +4,7 @@ public class RBS {
         
         int[] arr = {5, 6, 7, 8, 9, 1, 2, 3, 4};
 
-        int target = 3;
+        int target =4;
         int s = 0;
         int e = arr.length - 1;
         System.out.println(search(arr, target, s, e));
@@ -20,22 +20,20 @@ public class RBS {
         if (arr[mid] == target) { 
             return mid;
         }
+if(arr[s] <= arr[mid]) { 
+    if(target >= arr[s] && target <= arr[mid]) { 
+        return search(arr, target, s, mid-1);
+    } else { 
+        return search(arr, target, mid+1, e);
+    }
+}  
 
-     if(arr[s] <= arr[mid]) { 
-        if(target >= arr[s] && target <= arr[mid]) { 
-            return search(arr, target, s, mid -1);
-        } else { 
-          return  search(arr, target, mid +1,e);
-        }
-     }
+if(target >= arr[mid] && target <= arr[e]) { 
 
-     if(target >= arr[mid] && target <= arr[e]) { 
-       
-        return search(arr, target, mid +1, e);
-     }else { 
+    return search(arr, target, s, mid-1);
 
-        return search(arr, target, s, mid -1);
-
-     }
+} else { 
+    return search(arr, target, mid+1, e);
+}
     }
 }

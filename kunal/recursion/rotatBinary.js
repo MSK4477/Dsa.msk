@@ -1,8 +1,12 @@
 function search(nums, target) {
     // Function to find the pivot point (minimum element) in the rotated sorted array
     function findPivot(nums, left, right) {
-        if (left >= right) {console.log(left, "this is left") 
-            return left;}
+        if (left >= right) {
+
+            console.log(left, "this is left") 
+            return left;
+
+        }
         let mid = Math.floor((left + right) / 2);
         console.log("mid:", mid, "left", left, "right", right)
         if (nums[mid] > nums[right]) {
