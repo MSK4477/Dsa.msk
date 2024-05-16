@@ -2,7 +2,7 @@ public class RBS {
 
     public static void main(String[] args) {
         
-        int[] arr = {5, 6, 7, 8, 9, 1, 2, 3, 4};
+        int[] arr = {6, 7, 8, 9, 1, 2, 3, 4,5};
 
         int target =4;
         int s = 0;
@@ -22,18 +22,22 @@ public class RBS {
         }
 if(arr[s] <= arr[mid]) { 
     if(target >= arr[s] && target <= arr[mid]) { 
+System.out.println("hello from 4");
         return search(arr, target, s, mid-1);
     } else { 
+System.out.println("hello from 3");
         return search(arr, target, mid+1, e);
     }
 }  
 
 if(target >= arr[mid] && target <= arr[e]) { 
-
-    return search(arr, target, s, mid-1);
+System.out.println("hello from 1");
+    return search(arr, target, mid+1, e);
 
 } else { 
-    return search(arr, target, mid+1, e);
+System.out.println("hello from 2");
+
+    return search(arr, target, s, mid-1);
 }
     }
 }
