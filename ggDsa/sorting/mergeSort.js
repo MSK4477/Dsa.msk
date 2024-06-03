@@ -10,7 +10,7 @@ function mergeSort (arr, low, mid, high) {
 
     let left = [];
     let right = [];
-
+let res = 0;
     for(let i = 0; i < a1; i++) { 
 left.push(arr[low + i])
     }
@@ -26,7 +26,11 @@ while (i < a1  &&  j < a2) {
         i++;
     }else { 
         arr[k] = right[j];
+
+        res += (left.length-i)
+        console.log(res, left[i], right[j], i,"i", left.length)
         j++;
+        
     }
     k++
 }
@@ -41,10 +45,11 @@ while(j < a2) {
     k++
 }
 
-return arr
+return res
+//return arr for sorted array
 }
 
-let arr = [10, 20, 40, 20, 30]
+let arr = [2,5,8,11,3,6,9,13]
 let low = 0
 let high = arr.length -1;
 let mid = Math.floor(low + high / 2)
