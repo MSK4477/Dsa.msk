@@ -8,7 +8,7 @@ function reverse(n) {
 
   function rev(n, reversed) { 
     if (n % 10 == n) { 
-        reversed = (reversed * 10) + n;
+  reversed = (reversed * 10) + n;
         return reversed;
     }
     reversed = (reversed * 10) + (n % 10);

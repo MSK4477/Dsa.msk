@@ -11,7 +11,6 @@ for (let i = 0; i < unSortedArray.length - 1; i++) {
   
   if (min != i) {
     [unSortedArray[min],unSortedArray[i]] = [unSortedArray[i], unSortedArray[min]];
-
   }
 }
 console.log(unSortedArray);

@@ -1,13 +1,16 @@
 function lomutoPartition(arr, low, high) {
     const pivot = arr[high]; // Choosing the last element as pivot
     let i = low - 1; // Index of smaller element
-
+console.log(pivot, "i")
     for (let j = low; j < high; j++) {
         // If current element is smaller than or equal to pivot
         if (arr[j] <= pivot) {
+            console.log(arr)
             i++;
             // Swap arr[i] and arr[j]
             [arr[i], arr[j]] = [arr[j], arr[i]];
+            console.log(arr)
+
         }
     }
     // Swap arr[i+1] and arr[high] (or pivot)
@@ -16,7 +19,8 @@ function lomutoPartition(arr, low, high) {
 }
 
 // Example usage:
-const arr = [10, 7, 8, 9, 1, 5];
+// const arr = [10, 7, 8, 9, 1, 5];
+let arr = [10, 7, 8, 6, 9, 1, 5];
 const n = arr.length;
 const partitionIndex = lomutoPartition(arr, 0, n - 1);
 console.log("Partition Index:", partitionIndex); // This would give the index where partition is done
