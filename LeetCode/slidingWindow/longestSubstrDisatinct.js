@@ -25,6 +25,8 @@ function longestSubstringWithKDistinct(s, k) {
 
         charMap[leftChar]--
 
+
+// we are reducing because we want only k === distinct so we wanna start fresh
         if(charMap[leftChar] == 0) { 
             distinctCount--
         }
