@@ -9,7 +9,6 @@ function findUniqueSubstrings(s, k) {
         // Add the current character to the map
         counts.set(s[i], (counts.get(s[i]) || 0) + 1);
         
-        // Remove the character that is out of the current window
         if (i >= k) {
             const charToRemove = s[i - k];
             console.log(counts, "before ", charToRemove, "this is ii", i)
@@ -24,7 +23,6 @@ function findUniqueSubstrings(s, k) {
             }
         }
         
-        // Check if the current window has exactly k unique characters
         if (i >= k - 1 && counts.size === k && [...counts.values()].every(count => count === 1)) {
             console.log(i, counts, k,i - k + 1 )
             result.push(s.substring(i - k + 1, i + 1));

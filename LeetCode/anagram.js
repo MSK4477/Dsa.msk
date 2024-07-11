@@ -30,7 +30,7 @@ function areAnagrams(str1, str2) {
             charCount[char]--;
         }
     }
-
+console.log(charCount, "char count")
     return true; // All characters matched
 }
 
