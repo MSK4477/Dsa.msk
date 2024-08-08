@@ -6,7 +6,7 @@ function findMissingPos(arr, n) {
     }
   }
 
-  if (arr[0] != 1) {
+  if (arr[0] !== 1) {
     return 1;
   }
   for (let i = 0; i < arr.length - 1; i++) {

@@ -35,9 +35,9 @@ console.log(charCount, "char count")
 }
 
 // Example usage:
-console.log(areAnagrams("listen", "silent"));  // Output: true
-console.log(areAnagrams("triangle", "integral"));  // Output: true
-console.log(areAnagrams("hello", "world"));  // Output: false
+console.log(areAnagrams("listin", "silint"));  // Output: true
+// console.log(areAnagrams("triangle", "integral"));  // Output: true
+// console.log(areAnagrams("hello", "world"));  // Output: false
 
 
 

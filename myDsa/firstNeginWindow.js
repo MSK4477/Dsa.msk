@@ -1,17 +1,21 @@
-let nums = [1, -2, -3, -4, 5, 6, -7];
-let right = 3;
-let ans = [];
-let left = 0;
-for(let i = 0; i < nums.length; i++) { 
-
-left = i;
-    while(right <= nums.length) { 
-    if(nums[left] < 0) { 
-        ans.push(nums[left])
-        break;
+function findNegativeInSubarray(nums, start, end) {
+    for (let i = start; i < end; i++) {
+        if (nums[i] < 0) {
+            return nums[i];
+        }
     }
-        left++
-    }
-    right++
+    return null; 
 }
-console.log(ans)
+
+let nums = [1, 2, 3, -4, 5, 6, -7];
+let subarraySize = 3;
+let ans = [];
+
+for (let i = 0; i <= nums.length - subarraySize; i++) {
+    let negative = findNegativeInSubarray(nums, i, i + subarraySize);
+    if (negative !== null) {
+        ans.push(negative);
+    }
+}
+
+console.log(ans);
