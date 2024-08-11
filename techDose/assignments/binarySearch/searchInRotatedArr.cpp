@@ -37,11 +37,6 @@ int foundTarget (vector<int>& nums, int target) {
     }
   return -1;
 }
-
-
-
-
-
 int main () { 
     vector<int> nums = {1};
     int target = 0;
