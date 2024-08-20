@@ -1,1 +1,1 @@
-nums[left]
+this.head.next
