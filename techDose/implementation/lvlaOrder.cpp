@@ -11,17 +11,21 @@ struct TreeNode {
 
 void levelOrderTraversal(TreeNode* root) {
     if (root == NULL) return;
-    
     std::queue<TreeNode*> q;
     q.push(root);
+
     while (!q.empty()) {
         int levelSize = q.size();
         for (int i = 0; i < levelSize; ++i) {
+    cout<<q.size()<< " before" <<endl;
+
             TreeNode* node = q.front();
             q.pop();
-            std::cout << node->val << " ";
+            std::cout << node->val << " "<<endl;
             if (node->left) q.push(node->left);
             if (node->right) q.push(node->right);
+    cout<<q.size()<< " after" <<endl;
+
         }
         std::cout << std::endl; // Move to the next line after each level
     }
