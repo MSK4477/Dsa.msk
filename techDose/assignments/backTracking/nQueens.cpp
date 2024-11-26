@@ -41,7 +41,7 @@ private:
 
 int main() {
     Solution solution;
-    int n;
+    int n;  
     cout << "Enter the number of queens (n): ";
     cin >> n;
     vector<vector<string>> result = solution.solveNQueens(n);
