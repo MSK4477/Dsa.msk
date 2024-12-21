@@ -69,6 +69,7 @@ int main() {
         {5, 6}
     };
 
+ 
     // Process each edge and check for cycles
     bool cycleDetected = false;
     for (const auto& edge : edges) {

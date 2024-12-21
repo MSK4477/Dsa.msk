@@ -17,20 +17,6 @@ public:
     }
 };
 
-// Helper function to print the graph
-void printGraph(unordered_map<int, Node *> &visited)
-{
-    cout << "Graph Structure (Visited):" << endl;
-    for (auto &entry : visited)
-    {
-        cout << "Node " << entry.first << " --> [";
-        for (Node *neighbor : entry.second->neighbors)
-        {
-            cout << neighbor->val << " ";
-        }
-        cout << "]" << endl;
-    }
-}
 
 // Main function to clone the graph
 Node *cloneGraph(Node *node, unordered_map<int, Node *> &visited)
@@ -76,8 +62,6 @@ int main()
     // Clone the graph
     Node *clonedGraph = cloneGraph(node1, visited);
 
-    // Print the visited nodes and their neighbors
-    printGraph(visited);
-
+  
     return 0;
 }
