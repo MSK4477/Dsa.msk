@@ -9,7 +9,6 @@ class Solution {
         this.solve(0, board, solutions, leftRow, upperDiagonal, lowerDiagonal, n);
         return solutions;
     }
-
     solve(col, board, solutions, leftRow, upperDiagonal, lowerDiagonal, n) {
         if (col === n) {
             solutions.push([...board]);  // Add a copy of the current board
@@ -19,11 +18,11 @@ class Solution {
         for (let row = 0; row < n; row++) {
             if (leftRow[row] === 0 && lowerDiagonal[row + col] === 0 && upperDiagonal[n - 1 + col - row] === 0) {
                 // Place the queen
+                console.log(row, "row+col", row + col)
                 board[row] = board[row].substring(0, col) + 'Q' + board[row].substring(col + 1);
                 leftRow[row] = 1;
                 lowerDiagonal[row + col] = 1;
                 upperDiagonal[n - 1 + col - row] = 1;
-
                 // Recur to place the next queen
                 this.solve(col + 1, board, solutions, leftRow, upperDiagonal, lowerDiagonal, n);
 

@@ -32,7 +32,7 @@ public:
         string root2 = find(node2);
 
         if (root1 != root2) {
-            parent[root1    ] = root2;
+            parent[root1] = root2;
             weight[root1] = (value * weight[node2]) / weight[node1];
         }
     }
