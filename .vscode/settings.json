@@ -44,6 +44,11 @@
     "numbers": "cpp",
     "stdexcept": "cpp",
     "streambuf": "cpp",
-    "typeinfo": "cpp"
-  }
+    "typeinfo": "cpp",
+    "chrono": "cpp",
+    "format": "cpp",
+    "regex": "cpp"
+  },
+  "editor.fontLigatures": true, 
+  "editor.fontFamily": "JetBrains Mono, monospace",  
 }

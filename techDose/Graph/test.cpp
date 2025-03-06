@@ -7,39 +7,19 @@ using namespace std;
 class partiteFind
 {
 public:
-    bool dfs(vector<vector<int>>& graph, string color, vector<string> visited, int v)
-    {
-        cout << "DFS called with vertex: " << v << " and color: " << color << endl;
-        
-        if (visited[v] != "Blue" && visited[v] != "Red") {
-            visited[v] = color;
-            cout << "Node " << v << " marked as " << visited[v] << endl;
-        }  
-        else if (visited[v] != color) {
-            cout << "Conflict detected at node " << v << ". Expected: " << color << ", Found: " << visited[v] << endl;
-            return true;
-        } else {
-            cout << "Node " << v << " already visited with correct color: " << visited[v] << endl;
-            return false;
-        }
-
-        cout << "Exploring adjacent vertices of node " << v << endl;
-        for (auto adjVertex : graph[v]) {
-            cout << "Adjacent vertex: " << adjVertex << " of node: " << v << endl;
-            cout << color << " color before the change" <<endl;
-            color = color == "Red" ? "Blue" : "Red";
-            if (dfs(graph, color, visited, adjVertex)) {
-                cout << "Conflict propagated from vertex: " << adjVertex << " to vertex: " << v << endl;
-                return true;
-            }else { 
-            color = color == "Red" ? "Blue" : "Red";
-            }
-        }
-
-        cout << "Finished processing node " << v << ". No conflicts found." << endl;
-        return false;
+ int solve(int index, vector<vector<int>>& dp, vector<int>& weight, vector<int>& value, int w) { 
+    if(index == 0) { 
+        return  (w / weight[index]) * value[index];
     }
-};
+int include = 0;
+int exclude = solve(index -1, dp, weight, value, w);
+    if(weight[index] <= w) { 
+        include = solve(index, dp, weight, value, w - weight[index]) + value[index];
+    }else { 
+        include = solve(index -1, dp, weight, value, w-weight[index]) + value[index -1];
+    }
+    return dp[index][w] = include + exclude;
+ }
 
 bool isBipartite()
 {

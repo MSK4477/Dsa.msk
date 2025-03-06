@@ -41,7 +41,7 @@ int minimumEffortPath(vector<vector<int>>& heights) {
         for (auto [dr, dc] : directions) {
             int new_row = row + dr;
             int new_col = col + dc;
-            
+        
             // Check if the neighbor is within bounds
             if (new_row >= 0 && new_row < rows && new_col >= 0 && new_col < cols) {
                 // Calculate the new effort
